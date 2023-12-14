@@ -1,0 +1,62 @@
+.header{
+    background-color: white;
+    display: flex;
+    align-content: center;
+}
+.icon-div{
+    display: flex;
+    align-items: center;
+    justify-self: start;
+}
+
+.h2-div{
+    position: relative;
+    justify-content: center;
+    
+}
+
+.rain-img{
+    background: url("/assets/7795606_weather_rain_cloud_icon.png");
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    margin: 10px;
+}
+.rain-card{
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+// .rain-card > .mat-card-header{
+//     display: flex;
+//     justify-content: center;
+// }
+
+.veg-card{
+    height: 300px;
+    width: 300px;
+}
+
+.veg-content{
+    margin-top: 10px;
+}
+
+.veg-header, .rain-header{
+    display: flex;
+    justify-content: center;
+    background-color: #144272;
+    color: white;
+}
+
+.price-header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.price-card{
+    margin: 10px;
+    height: 88vh;
+    width: 300px;
+}

@@ -1,18 +1,15 @@
 <div fxFill style="background-color: #cbede3;">
-  <div fxLayout="column" fxLayoutAlign="start">
-    <mat-toolbar class="header">
-      <div fxLayout="row" class="icon-div">
-        <mat-icon style="color: #f29d38;">wb_sunny</mat-icon>
-        <mat-icon style="color: #5686e1;">thermostat</mat-icon>
-        <h2>28°C</h2>
-      </div>
-      <div class="h2-div" style="position: relative; display: flex; justify-items: center;">
-      <h2>菜價查詢平台</h2>
+  <div fxLayout="row">
+    <div fxLayout="row" class="icon-div" fxLayoutAlign="start center">
+      <mat-icon style="color: #f29d38;">wb_sunny</mat-icon>
+      <mat-icon style="color: #5686e1;">thermostat</mat-icon>
+      <div>28°C</div>
     </div>
-    </mat-toolbar>
+    <div fxLayout="column" fxFlex="100" class="h2-div" fxLayoutAlign="center center">
+      <div>菜價查詢平台</div>
+    </div>
   </div>
   <div class="content" fxLayout="row" fxLayoutAlign="space-around start">
-
     <div fxLayout="column" fxFlex="50" fxLayoutAlign="space-around center">
       <mat-card class="rain-card">
         <mat-card-header class="rain-header">

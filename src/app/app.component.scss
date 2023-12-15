@@ -4,15 +4,20 @@
     align-content: center;
 }
 .icon-div{
+    margin-left: 5px;
+    height: 50px;
     display: flex;
-    align-items: center;
     justify-self: start;
+    position: absolute;
+    font-size: 20px;
 }
 
 .h2-div{
-    position: relative;
+    font-size: 20px;
+    display: flex;
     justify-content: center;
-    
+    height: 50px;
+    background-color: white;
 }
 
 .rain-img{
@@ -23,9 +28,9 @@
     margin: 10px;
 }
 .rain-card{
-    margin: 10px;
+    margin-top: 20px;
     height: 300px;
-    width: 300px;
+    width: 400px;
 }
 
 // .rain-card > .mat-card-header{
@@ -49,14 +54,16 @@
     color: white;
 }
 
+.price-card{
+    margin-top: 20px;
+    height: 88vh;
+    width: 400px;
+}
+
+
 .price-header{
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
-.price-card{
-    margin: 10px;
-    height: 88vh;
-    width: 300px;
-}

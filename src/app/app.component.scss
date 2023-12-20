@@ -1,69 +1,71 @@
-.header{
-    background-color: white;
-    display: flex;
-    align-content: center;
-}
-.icon-div{
-    margin-left: 5px;
-    height: 50px;
-    display: flex;
-    justify-self: start;
-    position: absolute;
-    font-size: 20px;
+// 預處理樣式
+@mixin font-set($color: #000, $family: 'Noto Serif TC', $weight: bold, $size) {
+  color: $color;
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
 }
 
-.h2-div{
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    background-color: white;
+.header-div {
+  width: 100%;
+  background: #fff;
+  padding: 16px;
 }
 
-.rain-img{
-    background: url("/assets/7795606_weather_rain_cloud_icon.png");
-    width: 200px;
-    height: 200px;
-    background-size: 100%;
-    margin: 10px;
-}
-.rain-card{
-    margin-top: 20px;
-    height: 300px;
-    width: 400px;
+.h2-div {
+  @include font-set($size: 28px) //引用預處理樣式
 }
 
-// .rain-card > .mat-card-header{
-//     display: flex;
-//     justify-content: center;
-// }
-
-.veg-card{
-    height: 300px;
-    width: 300px;
+.rain-card {
+  margin-top: 20px;
 }
 
-.veg-content{
-    margin-top: 10px;
-}
+.rain-card-header,
+.searchVeg-header {
+  background: #144272;
+  // @include font-set($color:#fff ,$size:20px);
+  justify-content: center;
+  padding: 12px;
+  align-items: center;
 
-.veg-header, .rain-header{
-    display: flex;
-    justify-content: center;
-    background-color: #144272;
-    color: white;
-}
+  mat-card-title {
+    @include font-set($color: #fff, $size: 20px);
 
-.price-card{
-    margin-top: 20px;
-    height: 88vh;
-    width: 400px;
+  }
 }
 
 
-.price-header{
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.rain-img {
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 12px auto;
 }
 
+.veg-card {
+  height: 300px;
+  width: 300px;
+}
+
+.veg-content {
+  margin-top: 10px;
+}
+
+.price-card {
+  height: 76vh;
+  width: 80%;
+  margin: 20px auto;
+}
+
+
+.price-header {
+  background: #32866D;
+  justify-content: center;
+  padding: 12px;
+  align-items: center;
+
+  mat-card-title {
+    @include font-set($color: #fff, $size: 20px);
+  }
+}

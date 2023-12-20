@@ -1,46 +1,50 @@
 <div fxFill style="background-color: #cbede3;">
-  <div fxLayout="row">
-    <div fxLayout="row" class="icon-div" fxLayoutAlign="start center">
+  <div fxLayout="row" class="header-div">
+    <div fxLayout="row" fxLayoutAlign=" center" style="margin-left: 24px;">
       <mat-icon style="color: #f29d38;">wb_sunny</mat-icon>
       <mat-icon style="color: #5686e1;">thermostat</mat-icon>
-      <div>28°C</div>
+      <div>{{temperature}}</div>
     </div>
     <div fxLayout="column" fxFlex="100" class="h2-div" fxLayoutAlign="center center">
       <div>菜價查詢平台</div>
     </div>
   </div>
-  <div class="content" fxLayout="row" fxLayoutAlign="space-around start">
-    <div fxLayout="column" fxFlex="50" fxLayoutAlign="space-around center">
-      <mat-card class="rain-card">
-        <mat-card-header class="rain-header">
-          <div>
+  <div class="content" fxLayout="row" fxLayoutAlign="space-evenly start">
+    <div fxLayout="column" fxFlex="50" fxLayoutAlign="end center ">
+      <div style="width: 80%;margin: 0 auto;">
+        <mat-card class="example-card rain-card">
+          <mat-card-header class="rain-card-header">
             <mat-card-title>昨日雨量</mat-card-title>
-          </div>
-        </mat-card-header>
-        <div class="rain-img"></div>
-        <mat-card-content>
-          <p>昨日雨量：</p>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="rain-card">
-        <mat-card-header class="veg-header">
-          <div>
+          </mat-card-header>
+          <img mat-card-image class="rain-img" src="/assets/7795606_weather_rain_cloud_icon.png">
+          <mat-card-content>
+            <div >{{rainMl}}</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div style="width: 80%;margin: 0 auto;">
+        <mat-card class="example-card rain-card">
+          <mat-card-header class="searchVeg-header">
             <mat-card-title>查詢菜類</mat-card-title>
-          </div>
-        </mat-card-header>
-        <mat-card-content class="veg-content">
-          <p>蔥</p>
-          <p>價格：</p>
-        </mat-card-content>
-      </mat-card>
-
+          </mat-card-header>
+          <mat-card-content class="veg-content">
+            <mat-form-field style="width: 100%;">
+              <mat-select formControl="animalControl" style="width: 100%;" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let veg of vegetables" [value]="veg.name">
+                  {{veg.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="vegControl.hasError('required')">Please choose an animal</mat-error>
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
     <div fxLayout="column" fxFlex="50" fxLayoutAlign="space-around center">
-      <mat-card class="price-card">
+      <mat-card class="example-card price-card">
         <mat-card-header class="price-header">
-          <div style="background-color: #32866d; height: 30px; width: 100px;">
-            <mat-card-title style="color: white;">菜價走勢</mat-card-title>
-          </div>
+          <mat-card-title style="color: white;">菜價走勢</mat-card-title>
         </mat-card-header>
         <mat-card-content>
         </mat-card-content>

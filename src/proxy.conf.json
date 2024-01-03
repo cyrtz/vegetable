@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://10.25.1.134:5000/GetAllVeg",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

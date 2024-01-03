@@ -70,6 +70,17 @@
   }
 }
 
-// ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-//   background-color: #000  !important;
-// }
+.demo-chart {
+  height: 400px;
+}
+
+.predict-div, .rain-div{
+  @include font-set($color: #000, $size: 20px);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.predict-ans-div{
+  @include font-set($color: red, $size: 20px);
+}
+

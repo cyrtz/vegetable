@@ -5,8 +5,11 @@
       <mat-icon style="color: #5686e1;">thermostat</mat-icon>
       <div>{{temperature}}</div>
     </div>
-    <div fxLayout="column" fxFlex="100" class="h2-div" fxLayoutAlign="center center">
+    <div fxLayout="column" fxFlex="90" class="h2-div" fxLayoutAlign="center center">
       <div>菜價查詢平台</div>
+    </div>
+    <div fxFlex="10">
+      {{ today | date }}
     </div>
   </div>
   <div class="content" fxLayout="row" fxLayoutAlign="space-evenly start">
@@ -18,7 +21,7 @@
           </mat-card-header>
           <img mat-card-image class="rain-img" src="/assets/7795606_weather_rain_cloud_icon.png">
           <mat-card-content>
-            <div >{{rainMl}}</div>
+            <div class="rain-div">{{rainMl}}</div>
           </mat-card-content>
         </mat-card>
       </div>
@@ -29,14 +32,13 @@
           </mat-card-header>
           <mat-card-content class="veg-content">
             <mat-form-field style="width: 100%;">
-              <mat-select formControl="animalControl" style="width: 100%;" required>
-                <mat-option>--</mat-option>
-                <mat-option *ngFor="let veg of vegetables" [value]="veg.name">
-                  {{veg.name}}
+              <mat-select style="width: 100%;" required [(value)]="selected">
+                <mat-option *ngFor="let veg of vegetables" [value]="veg">
+                  {{veg}}
                 </mat-option>
               </mat-select>
-              <mat-error *ngIf="vegControl.hasError('required')">Please choose an animal</mat-error>
             </mat-form-field>
+            <button mat-raised-button color="primary" (click)="getPrice()">搜尋</button>
           </mat-card-content>
         </mat-card>
       </div>
@@ -47,6 +49,19 @@
           <mat-card-title style="color: white;">菜價走勢</mat-card-title>
         </mat-card-header>
         <mat-card-content>
+          <div [hidden]="loading" style="width: 60%;height: 100%;margin:24px auto;">
+            <mat-spinner [diameter]="300"></mat-spinner>
+          </div>
+          <div [hidden]="!loading">
+            <div echarts [options]="option" class="demo-chart"></div>
+            <div class="predict-div">
+              預測結果
+              <div class="predict-ans-div">
+                {{predict}}
+              </div>
+            </div>
+          </div>
+
         </mat-card-content>
       </mat-card>
     </div>
